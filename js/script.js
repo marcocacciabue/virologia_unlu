@@ -1,3 +1,6 @@
+
+
+
 let lang = navigator.language.slice(0, 2); // Get the first two letters of user's language preference
 
 // Hide elements that don't correspond to the user's preferred language
@@ -5,8 +8,19 @@ if (lang === 'en') {
   document.querySelectorAll('.second-language').forEach(elem => elem.style.display = 'none');
 } else {
   document.querySelectorAll('.english').forEach(elem => elem.style.display = 'none');
-}                      
+}                   
 
+const languageSelect = document.getElementById('language-select');
+
+languageSelect.addEventListener('change', function() {
+if (languageSelect.value === 'es') {
+document.querySelectorAll('.second-language').forEach(elem => elem.style.display = 'inline');
+document.querySelectorAll('.english').forEach(elem => elem.style.display = 'none');
+} else if (languageSelect.value === 'en') {
+     document.querySelectorAll('.english').forEach(elem => elem.style.display = 'inline');
+     document.querySelectorAll('.second-language').forEach(elem => elem.style.display = 'none');
+    } 
+  });
 (function ($) { "use strict";
 	
 	/* ========================================================================= */
