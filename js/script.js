@@ -5,25 +5,39 @@ let lang = navigator.language.slice(0, 2); // Get the first two letters of user'
 
 // Hide elements that don't correspond to the user's preferred language
 if (lang === 'en') {
-  document.querySelectorAll('.second-language').forEach(elem => elem.style.display = 'none');
+  document.querySelectorAll('.spanish').forEach(elem => elem.style.display = 'none');
+  document.querySelectorAll('.italian').forEach(elem => elem.style.display = 'none');
   document.getElementById("language-select").selectedIndex = 0;
-} else {
+} 
+
+if (lang === 'es') {
   document.querySelectorAll('.english').forEach(elem => elem.style.display = 'none');
-
+  document.querySelectorAll('.italian').forEach(elem => elem.style.display = 'none');
   document.getElementById("language-select").selectedIndex = 1;
-}                   
+} 
 
-
+if (lang === 'it') {
+  document.querySelectorAll('.spanish').forEach(elem => elem.style.display = 'none');
+  document.querySelectorAll('.english').forEach(elem => elem.style.display = 'none');
+  document.getElementById("language-select").selectedIndex = 2;
+} 
 
 languageSelect.addEventListener('change', function() {
 if (languageSelect.value === 'es') {
-document.querySelectorAll('.second-language').forEach(elem => elem.style.display = 'inline');
+document.querySelectorAll('.spanish').forEach(elem => elem.style.display = 'inline');
 document.querySelectorAll('.english').forEach(elem => elem.style.display = 'none');
+document.querySelectorAll('.italian').forEach(elem => elem.style.display = 'none');
 } else if (languageSelect.value === 'en') {
      document.querySelectorAll('.english').forEach(elem => elem.style.display = 'inline');
-     document.querySelectorAll('.second-language').forEach(elem => elem.style.display = 'none');
+     document.querySelectorAll('.spanish').forEach(elem => elem.style.display = 'none');
+     document.querySelectorAll('.italian').forEach(elem => elem.style.display = 'none');
+    }  else if (languageSelect.value === 'it') {
+     document.querySelectorAll('.italian').forEach(elem => elem.style.display = 'inline');
+     document.querySelectorAll('.spanish').forEach(elem => elem.style.display = 'none');
+     document.querySelectorAll('.english').forEach(elem => elem.style.display = 'none');
     } 
   });
+
 (function ($) { "use strict";
 	
 	/* ========================================================================= */
